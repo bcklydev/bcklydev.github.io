@@ -1,8 +1,136 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+/**
+Colour scheme help from https://www.radix-ui.com/colors 
+**/
+
+:root {
+  --appBackground: #001f0e; 
+  --elementBackground: hsl(137 36.0% 11.4%);
+  --elementHoverBackground: hsl(137 37.6% 13.7%);
+  --elementBorder: hsl(134 40.3% 23.8%);
+  --elementHoverBorder: hsl(131 40.1% 30.8%);
+  --lowContrastText: #00c95a;
+  --highContrastText: hsl(137 72.0% 94.0%);
+}
+
+body {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  background-color: var(--appBackground);
+  color: var(--highContrastText);
+  font-family: 'Questrial', sans-serif;
+  margin-top: 200px;
+}
+
+#avatar {
+  width: 360px;
+  height: 360px;
+}
+
+h1 {
+  font-size: 42px;
+  color: var(--lowContrastText);
+}
+
+h2 {
+  font-size: 24px;
+}
+
+nav {
+  font-size: 0;
+}
+
+nav svg:nth-of-type(1) {
+  padding-inline: 0 1vw;
+}
+
+a:link {
+  color: var(--highContrastText);
+  text-decoration: none;
+  transition: color 1s;
+}
+
+a:visited {
+  color: var(--highContrastText);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--lowContrastText);
+  transition: color 1s;
+}
+
+header {
+  min-width: 400px;
+  text-align: left;
+  margin: 32px;
+  padding: 32px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+#untitledcargame {
+  background-image: url("carbg.webp");
+}
+
+.tile {
+  width: 40vw;
+  height: 150px;
+  background-color: var(--appBackground);
+  margin: 16px;
+  padding: 8px 32px 8px 32px;
+  box-shadow: 0px 0px 0px rgb(0 0 0 / 0%);
+  transition: 0.4s ease-in-out;
+  transform: scale(1);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: min(20vw, 200px);
+}
+
+.tile:hover {
+  cursor: pointer;
+  background-color: var(--elementHoverBackground);
+  box-shadow: 0px 15px 35px rgb(0, 0, 0, 0.06);
+  transform: scale(1.03);
+}
+
+
+
+@media screen and (max-width: 1250px) {
+  body {
+      flex-flow: column nowrap;
+      margin-top: 50px;
+      margin-left: auto;
+  }  
+
+  header {
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+
+  main {
+    width: 80vw;
+  }
+
+  .tile {
+    width: 80vw;
+  }
+
+  #avatar {
+    width: 180px;
+    height: 180px;
+  }
+
+  .socialicon {
+    width: 48px;
+    height: 48px;
+  }
 }
